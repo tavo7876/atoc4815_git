@@ -5,8 +5,10 @@ Welcome! This repository is a space to practice Git commands. If something goes 
 ## Quick Setup
 
 ```bash
+# fork this repo first!! 
+
 # Clone this repository
-git clone https://github.com/WillyChap/atoc4815-git.git
+git clone https://github.com/UserName/atoc4815-git.git
 
 # Move into the folder
 cd atoc4815-git
