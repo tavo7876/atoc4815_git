@@ -57,7 +57,7 @@ def celsius_to_fahrenheit(temp_c):
 
 def daily_temp_range(high_f, low_f):
     """Calculate the daily temperature range in both F and C.
-
+    
     Parameters
     ----------
     high_f : float
@@ -71,7 +71,13 @@ def daily_temp_range(high_f, low_f):
         {"range_f": float, "range_c": float}
     """
     # TODO (Partner A): compute range in F and convert to C
-    pass
+    range_f = high_f - low_f
+    high_c = 3#fahrenheit_to_celsius(high_f)
+    low_c = 3#fahrenheit_to_celsius(low_f)
+    range_c = high_c - low_c
+    return range_f, range_c
+
+
 
 
 # ============================================================
