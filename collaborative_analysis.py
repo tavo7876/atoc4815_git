@@ -90,7 +90,7 @@ def daily_temp_range(high_f, low_f):
 
 def wind_chill(temp_f, wind_mph):
     """Calculate the wind chill index (valid for temp <= 50 F and wind >= 3 mph).
-
+    
     NWS formula:
         WC = 35.74 + 0.6215*T - 35.75*(V^0.16) + 0.4275*T*(V^0.16)
 
@@ -108,6 +108,14 @@ def wind_chill(temp_f, wind_mph):
     """
     # TODO (Partner B): implement the NWS wind chill formula
     # Return None if temp_f > 50 or wind_mph < 3
+    if temp_f > 50 or wind_mph < 3:
+        return None
+    
+    v16 = wind_mph ** 0.16
+    
+    # NWS formula:
+    wc = 35.74 + 0.6215*temp_f - 35.75*v16 + 0.4275*temp_f*v16
+    return wc
     pass
 
 
@@ -134,6 +142,19 @@ def heat_index(temp_f, rh):
     """
     # TODO (Partner B): implement the simplified heat index
     # Return None if temp_f < 80
+    if temp_f < 80:
+        return None
+    
+    T = temp_f
+    R = rh
+
+    hi = (-42.379 + 2.04901523*T + 10.14333127*R
+             - 0.22475541*T*R - 0.00683783*T^2 - 0.05481717*R**2
+             + 0.00122874*T^2*R + 0.00085282*T*R**2
+             - 0.00000199*T^2*R**2)
+    
+    return hi
+
     pass
 
 
